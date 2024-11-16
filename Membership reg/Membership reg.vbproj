@@ -1,0 +1,71 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <RootNamespace>Membership_reg</RootNamespace>
+    <StartupObject>Membership_reg.My.MyApplication</StartupObject>
+    <UseWindowsForms>true</UseWindowsForms>
+    <MyType>WindowsForms</MyType>
+    <Company>$(Authors) Blue Team</Company>
+    <Product>$(AssemblyName)</Product>
+    <Description>Welcome to the Membership Registration Form.
+
+This program allows you to manage member records effectively. You can add new members, edit existing member details, remove members, and print the current list of all members.
+
+Please note that all text boxes must be completed when adding or editing a member. If a new member chooses not to provide specific information, please enter "N/A" in that text box.
+
+System Requirements and Driver Information: To ensure the program works properly, make sure the following drivers and software are installed:
+
+.NET 6 Framework
+Microsoft ACE OLEDB 12 or later, depending on your Windows version.
+A compatible version of Microsoft Office installed, as this program works with CSV files.
+If you are unable to connect to the internet, please contact your service provider or IT support to manually download and install these drivers.
+
+File Format Compatibility:
+
+The program only works with CSV files. It does not support XLSX files.
+All exported files will be in CSV format.
+For more advanced edits, such as applying themes or creating enhanced printouts, we recommend using Microsoft Excel, available in Office 365, Office 2024, or an older version of Office.
+
+If you prefer to use free alternatives, LibreOffice is a suitable choice. You can download it at: https://www.libreoffice.org/</Description>
+    <Copyright>Blue Team</Copyright>
+    <IncludeSymbols>True</IncludeSymbols>
+    <Authors>$(AssemblyName) </Authors>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Windows.Forms" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="My Project\Application.Designer.vb">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Update="My Project\Resources.Designer.vb">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="My Project\Resources.resx">
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+
+</Project>
